@@ -47,7 +47,9 @@ public class MadLib
 
 
 			//While there is more of the story, read in the word/symbol
-
+				while there be more word, read word
+				if symbol, check symbol, replace with random word
+				keep read word
 				//If what was read in is one of the symbols, find a random
 				//word to replace it.
 			
@@ -119,17 +121,23 @@ public class MadLib
 
 	public String getRandomVerb()
 	{
-		return "";
+		Random randVerb = new Random();
+
+		return "" + verbs.get(randVerb.nextInt(verbs.size()));
 	}
 
 	public String getRandomNoun()
 	{
-		return "";
+		Random randNoun = new Random();
+
+		return "" + nouns.get(randNoun.nextInt(nouns.size()));
 	}
 
 	public String getRandomAdjective()
 	{
-		return "";
+		Random randAdj = new Random();
+
+		return "" + adjectives.get(randAdj.nextInt(Adjectives.size()));
 	}
 
 	public String toString()
