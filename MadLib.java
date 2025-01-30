@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -20,6 +20,19 @@ public class MadLib
 
 	public MadLib()
 	{
+		verbs.add("punched");
+		nouns.add("Walmart");
+		adjectives.add("massive");
+		story="i punched walmart in a masive way";
+
+		//first read from story.dat
+		//need second scanner after to chop up the string like before
+		//once you have the string from the string, check if it is any of those three symbols
+		// # = concatenate random noun
+		// @ = concatenate random verb
+		// & = concatenate random adj
+		//number one mistake is more than one .next in the has next loop. chop the thing one time
+
 
 	}
 
@@ -37,7 +50,7 @@ public class MadLib
 
 				//If what was read in is one of the symbols, find a random
 				//word to replace it.
-			}
+			
 
 
 		}
@@ -52,7 +65,13 @@ public class MadLib
 	{
 		try
 		{
+			// create reader scanner of a new type
+			Scanner reader = new Scanner(new File("nouns.dat"));
 
+			while(reader.hasNext());
+			{
+				nouns.add(reader.next());
+			}
 		}
 		catch(Exception e)
 		{
@@ -65,6 +84,12 @@ public class MadLib
 	{
 		try
 		{
+			Scanner reader = new Scanner(new File("verbs.dat"));
+
+			while(reader.hasNext());
+			{
+				verbs.add(reader.next());
+			}
 
 		}
 		catch(Exception e)
@@ -77,6 +102,13 @@ public class MadLib
 	{
 		try
 		{
+			Scanner reader = new Scanner(new File("adjectives.dat"));
+
+			while(reader.hasNext());
+			{
+				adjectives.add(reader.next());
+			}
+
 
 		}
 		catch(Exception e)
@@ -102,6 +134,6 @@ public class MadLib
 
 	public String toString()
 	{
-		return "";
+		return "" + story;
 	}
 }
